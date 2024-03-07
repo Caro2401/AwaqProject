@@ -1,58 +1,50 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>AWAQ - ¿Qué ven los biomonitores?</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 0;
-            background-color: #d3f4d3; /* Light green background color */
-        }
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>AWAQ - ¿Qué ven los biomonitores?</title>
+        <link rel="stylesheet" href="{% static 'styles/style.css' %}" />
+    </head>
+    <body>
 
-        .header {
-            background-color: #228b22; /* Forest green background color */
-            color: #fff; /* White text color */
-            padding: 20px 0;
-            text-align: center;
-            margin-bottom: 20px;
-        }
-
-        .container {
-            max-width: 800px;
-            margin: 0 auto;
-            padding: 20px;
-            background-color: #fff;
-            border-radius: 8px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-        }
-
-        h1 {
-            color: #333;
-            text-align: center;
-        }
-
-        p {
-            color: #666;
-            text-align: center;
-        }
-    </style>
-</head>
-<body>
-
-<div class="header">
-    <h1>AWAQ</h1>
-</div>
-
-<div class="container">
-    <p>¿Qué ven los biomonitores?</p>
-</div>
-
-<div>
-    {{ plot|safe }}
-</div>
-
-</body>
+        <div class="header">
+            <h1>AWAQ</h1>
+        </div>
+        
+        <div class="container"> 
+            <p>¿Qué ven los biomonitores?</p>
+        </div>
+        
+        <div id="content">
+            <div id="content_left">
+                <div class="post">
+                    <!---Buttons-->
+                    <p>Tipo de grafico</p>
+                    <div class="container_button">
+                        <div class="column">
+                            <div class="column">
+                                <button class="button">Mapa</button>
+                            </div>
+                            <div class="column">
+                                <button class="button">Barras</button>
+                            </div>
+                            <div class="column">
+                                <button class="button">Pie</button>
+                            </div>
+                            <div class="column">
+                                <button class="button">Lineas</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div id="content_right">
+                <div class="section">
+                    {{ plot|safe }}
+                </div>
+            </div>
+        </div>
+    </body>
 </html>

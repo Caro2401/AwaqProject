@@ -1,0 +1,100 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #7bdaae; /* Light green background color */
+}
+
+.header {
+    background-color: #228b22; /* Forest green background color */
+    color: #fff; /* White text color */
+    padding: 20px 0;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+    font-family: Tahoma;
+	font-size: 20px;
+    background-color: #d3f0d2;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+#content {
+
+	margin: 15px;
+	padding: 0;
+
+}
+
+* html #content {
+	
+	margin: 20px 0 20px 20px;
+	
+}
+
+#content_left {
+	
+	float: left;
+	width: 450px;
+	margin: 0 12px 0 0 ;
+	padding: 0;
+	
+}
+
+#content_right {
+	
+	float: right;
+	width: 900px;
+	
+}
+
+#content_right .post {
+
+	margin: 15px;
+	padding: 0;
+	
+}
+
+.button {
+    padding: 10px;
+    margin: 5px;
+    width: 100px;
+    text-align: center;
+    background-color: #3498db;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+/* Estilos para los contenedores */
+.container_button {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.row {
+    display: flex;
+    justify-content: center;
+}
+
+.column {
+    flex: 1;
+    text-align: center;
+}
+
+h1 {
+    color: #c5e6c4;
+    text-align: center;
+}
+
+p {
+    color: #666;
+    text-align: center;
+}

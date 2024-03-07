@@ -30,6 +30,6 @@ def index(request):
                     color_continuous_scale=px.colors.cyclical.IceFire, size_max=15, zoom=10,
                     mapbox_style="carto-positron")
     
-    context["plot"] = fig.to_html(full_html=False, default_height=800, default_width=1000)
+    context["plot"] = fig.to_html(full_html=False, default_height=600, default_width=800)
     
     return render(request, 'index.html', context)
