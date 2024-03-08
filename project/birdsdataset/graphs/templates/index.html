@@ -23,20 +23,23 @@
                     <!---Buttons-->
                     <p>Tipo de grafico</p>
                     <div class="container_button">
+                        <form method="post" action="">
+                            {% csrf_token %}
                         <div class="column">
                             <div class="column">
-                                <button class="button">Mapa</button>
+                                <button type="submit" name="mapButton" class="button">Mapa</button>
                             </div>
                             <div class="column">
-                                <button class="button">Barras</button>
+                                <button type="submit" name="barButton" class="button">Barras</button>
                             </div>
                             <div class="column">
-                                <button class="button">Pie</button>
+                                <button type="submit" name="pieButton"class="button">Pie</button>
                             </div>
                             <div class="column">
-                                <button class="button">Lineas</button>
+                                <button type="submit" name="lineButton" class="button">Lineas</button>
                             </div>
                         </div>
+                        </form>
                     </div>
                 </div>
             </div>
