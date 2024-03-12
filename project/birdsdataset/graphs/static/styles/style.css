@@ -40,7 +40,7 @@ body {
 #content_left {
 	
 	float: left;
-	width: 450px;
+	width: 400px;
 	margin: 0 12px 0 0 ;
 	padding: 0;
 	
@@ -49,7 +49,7 @@ body {
 #content_right {
 	
 	float: right;
-	width: 900px;
+	width: 1000px;
 	
 }
 
@@ -60,7 +60,7 @@ body {
 	
 }
 
-.button {
+.submit {
     padding: 10px;
     margin: 5px;
     width: 100px;
@@ -73,7 +73,7 @@ body {
 }
 
 /* Estilos para los contenedores */
-.container_button {
+.submit {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;

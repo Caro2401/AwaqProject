@@ -10,11 +10,7 @@
     <body>
 
         <div class="header">
-            <h1>AWAQ</h1>
-        </div>
-        
-        <div class="container"> 
-            <p>¿Qué ven los biomonitores?</p>
+            <h1>AWAQ - ¿Qué ven los biomonitores?</h1>
         </div>
         
         <div id="content">
@@ -26,14 +22,15 @@
                         <form method="post" action="">
                             {% csrf_token %}
                             <select id="dtipe" name="dtype">
-                                <option value="v3_id">Mapa - localización de las especies</option>
-                                <option value="v3_genus">Grafica de barras - registro por especie</option>
-                                <option value="v3_species">Grafica de barras - top 5 especies con más registros</option>
-                                <option value="v3_ename">Grafica de barras - top 5 especies con menos registros</option>
-                                <option value="v3_record">Grafica de pie - registros por país</option>
-                                <option value="v3_country">Grafica de pie - tipos de canto</option>
-                                <option value="v3_lat">Nube de palabras - Encargado de registro</option>
-                                <option value="v3_long">Grafica de línea - registros por fecha</option>
+                                <option value="mapButton">Mapa - localización de las especies</option>
+                                <option value="bar_genus">Grafica de barras - registro por especie</option>
+                                <option value="bar_topgenus">Grafica de barras - top 5 especies con más registros</option>
+                                <option value="bar_buttomgenus">Grafica de barras - top 5 especies con menos registros</option>
+                                <option value="pie_country">Grafica de pie - registros por país</option>
+                                <option value="pie_song">Grafica de pie - tipos de canto</option>
+                                <option value="word_reg">Nube de palabras - Encargado de registro</option>
+                                <option value="line_reg">Grafica de línea - registros por fecha</option>
+                                <option value="line_topreg">Grafica de línea - registros por fecha del top de países</option>
                             </select>
                             <br>
                             <input type="submit" value="Graficar">
