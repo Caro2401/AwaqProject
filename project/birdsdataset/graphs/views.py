@@ -8,25 +8,21 @@ import pandas as pd
 # Create your views here.
 from django.http import HttpRequest, HttpResponse
 
+#Creat the query to select the first 5 records in the table
+SQL_QUERY = """ SELECT * FROM [dbo].[new_birdsong];"""
+cur = utils.connectDB()
+cursor = cur.cursor()
+cursor.execute(SQL_QUERY)
+
+records = cursor.fetchall()
+df=pd.DataFrame(records)
+columns_name=df.columns
 
 def index(request):
     context = {
         "plot" : None
     }
 
-    #Creat the query to select the first 5 records in the table
-    SQL_QUERY = """
-    SELECT *
-    FROM
-    [dbo].[new_birdsong];
-    """
-    cur = utils.connectDB()
-    cursor = cur.cursor()
-    cursor.execute(SQL_QUERY)
-
-    records = cursor.fetchall()
-    df=pd.DataFrame(records)
-    columns_name=df.columns
 
     if request.method == 'POST':
         # Check which button was clicked
