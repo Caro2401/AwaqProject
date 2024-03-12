@@ -86,7 +86,7 @@ body {
 
 .column {
     flex: 1;
-    text-align: center;
+    text-align: left;
 }
 
 h1 {

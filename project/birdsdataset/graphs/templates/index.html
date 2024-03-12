@@ -20,25 +20,23 @@
         <div id="content">
             <div id="content_left">
                 <div class="post">
-                    <!---Buttons-->
+                    <!---Options-->
                     <p>Tipo de grafico</p>
                     <div class="container_button">
                         <form method="post" action="">
                             {% csrf_token %}
-                        <div class="column">
-                            <div class="column">
-                                <button type="submit" name="mapButton" class="button">Mapa</button>
-                            </div>
-                            <div class="column">
-                                <button type="submit" name="barButton" class="button">Barras</button>
-                            </div>
-                            <div class="column">
-                                <button type="submit" name="pieButton"class="button">Pie</button>
-                            </div>
-                            <div class="column">
-                                <button type="submit" name="lineButton" class="button">Lineas</button>
-                            </div>
-                        </div>
+                            <select id="dtipe" name="dtype">
+                                <option value="v3_id">Mapa - localización de las especies</option>
+                                <option value="v3_genus">Grafica de barras - registro por especie</option>
+                                <option value="v3_species">Grafica de barras - top 5 especies con más registros</option>
+                                <option value="v3_ename">Grafica de barras - top 5 especies con menos registros</option>
+                                <option value="v3_record">Grafica de pie - registros por país</option>
+                                <option value="v3_country">Grafica de pie - tipos de canto</option>
+                                <option value="v3_lat">Nube de palabras - Encargado de registro</option>
+                                <option value="v3_long">Grafica de línea - registros por fecha</option>
+                            </select>
+                            <br>
+                            <input type="submit" value="Graficar">
                         </form>
                     </div>
                 </div>
