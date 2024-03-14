@@ -94,6 +94,10 @@ def generate_map_plot(df):
     fig = px.scatter_mapbox(records, lat='bird_latitude', lon='bird_longitute', color='bird_genus',
                   color_continuous_scale=px.colors.cyclical.IceFire, size_max=15, zoom=1,
                   mapbox_style="carto-positron")
+    fig.update_layout(
+    title="Mapa de registros por genero ",
+
+)
     return fig
 
 def generate_bar_plot(df,top,buttom):
@@ -108,7 +112,7 @@ def generate_bar_plot(df,top,buttom):
         fig = px.bar(agrupado, x="count", y="bird_genus",  text="text",
                     color_discrete_sequence=px.colors.qualitative.Set3,
                     labels={'bird_genus': 'Género de Ave', 'count': 'Cantidad'})
-        fig.update_layout(yaxis={'categoryorder':'total ascending'}) 
+        fig.update_layout(title="Registros por especie de las especies con mas registros",yaxis={'categoryorder':'total ascending'}) 
         fig.update_traces(texttemplate='%{text}', textposition='inside') # Opcional: Ordenar las barras horizontalmente
     elif buttom==True:
         agrupado= agrupado.tail(5)
@@ -117,12 +121,12 @@ def generate_bar_plot(df,top,buttom):
 
         fig = px.bar(agrupado, x="count", y="bird_genus",  text="text",
                     labels={'bird_genus': 'Género de Ave', 'count': 'Cantidad'})
-        fig.update_layout(yaxis={'categoryorder':'total ascending'}) 
+        fig.update_layout(title="Registros por especie de las especies con menores registros",yaxis={'categoryorder':'total ascending'}) 
         fig.update_traces(texttemplate='%{text}', textposition='inside') # Opcional: Ordenar las barras horizontalmente
     else:
         fig = px.bar(agrupado , x='bird_genus', y='count', text='bird_fecha')
         fig.update_layout(
-            title="Bar Chart de los registros por especie",
+            title="Registros por especie",
             xaxis_title="Especie",
             yaxis_title="Numero de registros",
             barmode='group',
@@ -174,6 +178,11 @@ def generate_line_plot(df,top):
         render_mode="markers")
         fig.add_trace(px.scatter(top_cinco, x='bird_fecha', y="count", text='count').data[0])
         fig.update_traces(textposition='top center')
+        fig.update_layout(
+            title="Registros por fecha ",
+            xaxis_title="Fecha",
+            yaxis_title="Numero de registros"
+        )
 
     elif top==True:
         agrupado_contry = df.groupby(['bird_country',pd.Grouper(key='bird_fecha')]).size().reset_index(name='count')
@@ -181,4 +190,9 @@ def generate_line_plot(df,top):
         top_contry['bird_fecha'] = pd.to_datetime(agrupado_contry['bird_fecha'])
         fig = px.line(top_contry, x="bird_fecha", y="count", color="bird_country", markers=True, line_group="bird_country", hover_name="bird_country",
     render_mode="markers")
+        fig.update_layout(
+            title="Registros por fecha de los paises con más registros ",
+            xaxis_title="Fecha",
+            yaxis_title="Numero de registros"
+        )
     return fig
